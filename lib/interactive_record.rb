@@ -66,7 +66,7 @@ class InteractiveRecord
   
    def self.find_by(x)
      #binding.pry
-    sql = "SELECT * FROM #{self.table_name} WHERE #{x.keys.first} = '#{x.values.first}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{x.keys.first} = #{x.values.first.to_s}"
     #binding.pry
     DB[:conn].execute(sql)
     #binding.pry
